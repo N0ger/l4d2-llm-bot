@@ -35,6 +35,10 @@ Bot survivora w Left 4 Dead 2 sterowany przez LLM, działający na własnym serw
 3. Podpięcie prawdziwego modelu i rozszerzenie białej listy akcji.
 
 ## Struktura repo
+- `voice/` — komendy głosowe: Vosk (offline, gramatyka z fraz) → `ems/l4d2_voicecmd/commands.txt`. Tabele fraz w `voice/commands/*.toml`.
+- `vscript/addon/` — dodatek VScript (mapspawn_addon) czytający ten plik przez `FileToString` i wykonujący komendy przez `SendToConsole` (tylko listen server). `vscript/build_vpk.py` pakuje go do VPK.
+  Biała lista prefiksów (`vocalize `, `scripted_user_func l4b,`) jest w `bridge.py` i w `.nut` — zmieniać razem.
+  Rozkazy wykonuje Left 4 Bots 2 (komendy: https://github.com/smilz0/Left4Bots/blob/main/COMMANDS.md), kwestie daje ion's Vocalizer.
 - `plugin/scripting/l4d2_llm_bot.sp` — plugin SourceMod (stan → POST → `L4D2_CommandABot`).
 - `proxy/l4d2_llm_proxy/` — FastAPI: `schema.py` (protokół), `validate.py` (biała lista), `prompt.py` (prompt + historia), `backends.py` (mock / modele), `app.py`.
 - `proxy/tests/` — testy pytest + przykładowy stan `sample_state.json`.

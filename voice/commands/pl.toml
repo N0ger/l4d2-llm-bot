@@ -1,0 +1,204 @@
+# Polskie komendy głosowe dla Left 4 Bots 2 (+ ion's Vocalizer).
+#
+# [[command]]      fraza bez imienia bota.
+#                  "vocalize X": Twoja postać wypowiada kwestię X, a L4B2 zamienia ją
+#                  w rozkaz według ems/left4bots2/cfg/vocalizer.txt (domyślne
+#                  powiązania w komentarzach poniżej).
+# [[bot_command]]  fraza + imię bota (w dowolnej kolejności, np. "trener czekaj"
+#                  albo "czekaj trener"); idzie prosto do L4B2, bez kwestii głosowej.
+#                  {bot} zamienia się na nazwę bota z sekcji [bots].
+#
+# Dozwolone są tylko komendy zaczynające się od "vocalize " albo
+# "scripted_user_func l4b,". Słowa muszą być w słowniku modelu Vosk:
+# sprawdzisz to przez  python -m l4d2_voice --check
+
+[bots]
+nick = ["nick", "nik", "mikołaj"]
+rochelle = ["rochelle", "roszel"]
+coach = ["coach", "kołcz", "trener"]
+ellis = ["ellis", "elis"]
+bill = ["bill", "bil"]
+zoey = ["zoey", "zoja", "zoe"]
+francis = ["francis", "franek", "franciszek"]
+louis = ["louis", "luis", "ludwik"]
+
+# --- Do wszystkich: przez Vocalizer (postać mówi kwestię) ---------------------
+
+[[command]]
+name = "lead"                       # bots lead
+say = ["prowadźcie", "prowadź nas"]
+run = ["vocalize PlayerLeadOn"]
+
+[[command]]
+name = "wait"                       # bots wait
+say = ["czekajcie", "zaczekajcie", "stójcie"]
+run = ["vocalize PlayerWaitHere"]
+
+[[command]]
+name = "go"                         # bots goto (tam, gdzie patrzysz)
+say = ["naprzód", "idźcie tam"]
+run = ["vocalize PlayerEmphaticGo"]
+
+[[command]]
+name = "witch"                      # bot witch (wiedźma, na którą patrzysz)
+say = ["wiedźma", "czarownica"]
+run = ["vocalize PlayerWarnWitch"]
+
+[[command]]
+name = "use"                        # bot use (to, na co patrzysz)
+say = ["weź to", "użyj tego"]
+run = ["vocalize PlayerMoveOn"]
+
+[[command]]
+name = "cancel"                     # bots cancel
+say = ["trzymajmy się razem", "anuluj"]
+run = ["vocalize PlayerStayTogether"]
+
+[[command]]
+name = "follow"                     # bot follow me (jeden bot)
+say = ["za mną", "chodź za mną"]
+run = ["vocalize PlayerFollowMe"]
+
+[[command]]
+name = "heal"                       # bots heal (kwestia z ion's Vocalizer)
+say = ["uleczcie się", "apteczki"]
+run = ["vocalize iMT_PlayerSuggestHealth"]
+
+[[command]]
+name = "heal_me"                    # bot heal me
+say = ["ulecz mnie", "potrzebuję apteczki"]
+run = ["vocalize AskForHealth2"]
+
+[[command]]
+name = "give"                       # bot give
+say = ["daj mi coś", "podaj mi"]
+run = ["vocalize PlayerAnswerLostCall"]
+
+[[command]]
+name = "swap"                       # bot swap (kwestia z ion's Vocalizer)
+say = ["zamiana", "wymiana"]
+run = ["vocalize iMT_PlayerHello"]
+
+[[command]]
+name = "hurry"                      # bots hurry
+say = ["pospieszcie się", "biegiem"]
+run = ["vocalize PlayerHurryUp"]
+
+[[command]]
+name = "automation"                 # bots automation all
+say = ["róbcie swoje"]
+run = ["vocalize PlayerImWithYou"]
+
+# --- Do wszystkich: prosto do L4B2 -------------------------------------------
+
+[[command]]
+name = "follow_all"
+say = ["wszyscy za mną", "chodźcie za mną"]
+run = ["scripted_user_func l4b,bots,follow,me"]
+
+[[command]]
+name = "come"
+say = ["do mnie", "chodźcie tu"]
+run = ["scripted_user_func l4b,bots,come"]
+
+[[command]]
+name = "throw"                      # rzuca bot wybrany automatycznie
+say = ["rzucajcie", "granat"]
+run = ["scripted_user_func l4b,bot,throw"]
+
+[[command]]
+name = "tempheal"
+say = ["weźcie tabletki", "tabletki"]
+run = ["scripted_user_func l4b,bots,tempheal"]
+
+# --- Do jednego bota (imię + fraza) ------------------------------------------
+
+[[bot_command]]
+name = "wait"
+say = ["czekaj", "stój", "zostań"]
+run = ["scripted_user_func l4b,{bot},wait"]
+
+[[bot_command]]
+name = "wait_here"
+say = ["czekaj tutaj", "zostań tutaj"]
+run = ["scripted_user_func l4b,{bot},wait,here"]
+
+[[bot_command]]
+name = "wait_there"
+say = ["czekaj tam", "zostań tam"]
+run = ["scripted_user_func l4b,{bot},wait,there"]
+
+[[bot_command]]
+name = "follow"
+say = ["za mną", "chodź za mną"]
+run = ["scripted_user_func l4b,{bot},follow,me"]
+
+[[bot_command]]
+name = "come"
+say = ["do mnie", "chodź tu"]
+run = ["scripted_user_func l4b,{bot},come"]
+
+[[bot_command]]
+name = "lead"
+say = ["prowadź"]
+run = ["scripted_user_func l4b,{bot},lead"]
+
+[[bot_command]]
+name = "go"
+say = ["idź tam", "naprzód"]
+run = ["scripted_user_func l4b,{bot},goto"]
+
+[[bot_command]]
+name = "heal"
+say = ["lecz się", "ulecz się"]
+run = ["scripted_user_func l4b,{bot},heal"]
+
+[[bot_command]]
+name = "heal_me"
+say = ["ulecz mnie"]
+run = ["scripted_user_func l4b,{bot},heal,me"]
+
+[[bot_command]]
+name = "give"
+say = ["daj mi"]
+run = ["scripted_user_func l4b,{bot},give"]
+
+[[bot_command]]
+name = "swap"
+say = ["zamiana"]
+run = ["scripted_user_func l4b,{bot},swap"]
+
+[[bot_command]]
+name = "use"
+say = ["weź to", "użyj"]
+run = ["scripted_user_func l4b,{bot},use"]
+
+[[bot_command]]
+name = "carry"
+say = ["nieś to", "weź kanister"]
+run = ["scripted_user_func l4b,{bot},carry"]
+
+[[bot_command]]
+name = "throw"
+say = ["rzuć", "rzucaj"]
+run = ["scripted_user_func l4b,{bot},throw"]
+
+[[bot_command]]
+name = "tempheal"
+say = ["tabletki", "weź tabletki"]
+run = ["scripted_user_func l4b,{bot},tempheal"]
+
+[[bot_command]]
+name = "witch"
+say = ["wiedźma", "zabij wiedźmę"]
+run = ["scripted_user_func l4b,{bot},witch"]
+
+[[bot_command]]
+name = "hurry"
+say = ["szybko", "pospiesz się"]
+run = ["scripted_user_func l4b,{bot},hurry"]
+
+[[bot_command]]
+name = "cancel"
+say = ["anuluj", "stop", "przestań"]
+run = ["scripted_user_func l4b,{bot},cancel"]

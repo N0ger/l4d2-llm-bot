@@ -1,0 +1,9 @@
+"AddonInfo"
+{
+	addonSteamAppID		550
+	addontitle			"L4D2 Voice Commands"
+	addonversion		"0.1.0"
+	addonauthor			"N0ger"
+	addonDescription	"Runs voice commands recognized by the l4d2-voice app (Left 4 Bots 2 / ion's Vocalizer). Local (listen) server only."
+	addonContent_Script	1
+}

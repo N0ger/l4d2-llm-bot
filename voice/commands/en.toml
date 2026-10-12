@@ -1,0 +1,193 @@
+# English voice commands for Left 4 Bots 2 (+ ion's Vocalizer).
+# Same format as pl.toml - see the comments there.
+
+[bots]
+nick = ["nick"]
+rochelle = ["rochelle", "ro"]
+coach = ["coach"]
+ellis = ["ellis"]
+bill = ["bill"]
+zoey = ["zoey", "zoe"]
+francis = ["francis"]
+louis = ["louis"]
+
+# --- Everyone, via the vocalizer (your character speaks the line) ------------
+
+[[command]]
+name = "lead"                       # bots lead
+say = ["lead the way", "take the lead"]
+run = ["vocalize PlayerLeadOn"]
+
+[[command]]
+name = "wait"                       # bots wait
+say = ["wait here", "everyone wait", "hold up"]
+run = ["vocalize PlayerWaitHere"]
+
+[[command]]
+name = "go"                         # bots goto
+say = ["go go go", "go there"]
+run = ["vocalize PlayerEmphaticGo"]
+
+[[command]]
+name = "witch"                      # bot witch
+say = ["witch"]
+run = ["vocalize PlayerWarnWitch"]
+
+[[command]]
+name = "use"                        # bot use
+say = ["grab that", "use that"]
+run = ["vocalize PlayerMoveOn"]
+
+[[command]]
+name = "cancel"                     # bots cancel
+say = ["stay together", "cancel orders"]
+run = ["vocalize PlayerStayTogether"]
+
+[[command]]
+name = "follow"                     # bot follow me
+say = ["follow me"]
+run = ["vocalize PlayerFollowMe"]
+
+[[command]]
+name = "heal"                       # bots heal (ion's Vocalizer line)
+say = ["heal up", "everyone heal"]
+run = ["vocalize iMT_PlayerSuggestHealth"]
+
+[[command]]
+name = "heal_me"                    # bot heal me
+say = ["heal me", "i need a medkit"]
+run = ["vocalize AskForHealth2"]
+
+[[command]]
+name = "give"                       # bot give
+say = ["give me something", "i'm here"]
+run = ["vocalize PlayerAnswerLostCall"]
+
+[[command]]
+name = "swap"                       # bot swap (ion's Vocalizer line)
+say = ["swap items", "trade"]
+run = ["vocalize iMT_PlayerHello"]
+
+[[command]]
+name = "hurry"                      # bots hurry
+say = ["hurry up", "move it"]
+run = ["vocalize PlayerHurryUp"]
+
+[[command]]
+name = "automation"                 # bots automation all
+say = ["i'm with you", "do your thing"]
+run = ["vocalize PlayerImWithYou"]
+
+# --- Everyone, straight to L4B2 ----------------------------------------------
+
+[[command]]
+name = "follow_all"
+say = ["everyone follow me", "all follow me"]
+run = ["scripted_user_func l4b,bots,follow,me"]
+
+[[command]]
+name = "come"
+say = ["come here", "regroup"]
+run = ["scripted_user_func l4b,bots,come"]
+
+[[command]]
+name = "throw"
+say = ["throw it", "fire in the hole"]
+run = ["scripted_user_func l4b,bot,throw"]
+
+[[command]]
+name = "tempheal"
+say = ["take pills", "take your pills"]
+run = ["scripted_user_func l4b,bots,tempheal"]
+
+# --- One bot (name + phrase) -------------------------------------------------
+
+[[bot_command]]
+name = "wait"
+say = ["wait", "stay"]
+run = ["scripted_user_func l4b,{bot},wait"]
+
+[[bot_command]]
+name = "wait_here"
+say = ["wait here", "stay here"]
+run = ["scripted_user_func l4b,{bot},wait,here"]
+
+[[bot_command]]
+name = "wait_there"
+say = ["wait there", "stay there"]
+run = ["scripted_user_func l4b,{bot},wait,there"]
+
+[[bot_command]]
+name = "follow"
+say = ["follow me"]
+run = ["scripted_user_func l4b,{bot},follow,me"]
+
+[[bot_command]]
+name = "come"
+say = ["come here"]
+run = ["scripted_user_func l4b,{bot},come"]
+
+[[bot_command]]
+name = "lead"
+say = ["lead", "lead the way"]
+run = ["scripted_user_func l4b,{bot},lead"]
+
+[[bot_command]]
+name = "go"
+say = ["go there"]
+run = ["scripted_user_func l4b,{bot},goto"]
+
+[[bot_command]]
+name = "heal"
+say = ["heal up", "heal yourself"]
+run = ["scripted_user_func l4b,{bot},heal"]
+
+[[bot_command]]
+name = "heal_me"
+say = ["heal me"]
+run = ["scripted_user_func l4b,{bot},heal,me"]
+
+[[bot_command]]
+name = "give"
+say = ["give me"]
+run = ["scripted_user_func l4b,{bot},give"]
+
+[[bot_command]]
+name = "swap"
+say = ["swap"]
+run = ["scripted_user_func l4b,{bot},swap"]
+
+[[bot_command]]
+name = "use"
+say = ["use that", "grab that"]
+run = ["scripted_user_func l4b,{bot},use"]
+
+[[bot_command]]
+name = "carry"
+say = ["carry that", "grab the can"]
+run = ["scripted_user_func l4b,{bot},carry"]
+
+[[bot_command]]
+name = "throw"
+say = ["throw", "throw it"]
+run = ["scripted_user_func l4b,{bot},throw"]
+
+[[bot_command]]
+name = "tempheal"
+say = ["take pills"]
+run = ["scripted_user_func l4b,{bot},tempheal"]
+
+[[bot_command]]
+name = "witch"
+say = ["kill the witch"]
+run = ["scripted_user_func l4b,{bot},witch"]
+
+[[bot_command]]
+name = "hurry"
+say = ["hurry", "hurry up"]
+run = ["scripted_user_func l4b,{bot},hurry"]
+
+[[bot_command]]
+name = "cancel"
+say = ["cancel", "stop"]
+run = ["scripted_user_func l4b,{bot},cancel"]
