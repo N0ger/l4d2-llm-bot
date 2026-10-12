@@ -1,0 +1,26 @@
+{
+  "v": 1,
+  "seq": 42,
+  "time": 312,
+  "map": "c2m1_highway",
+  "survivors": [
+    {"name": "Nick", "player": "N0ger", "bot": false, "controlled": false, "alive": true, "hp": 64, "temp_hp": 0,
+     "incap": false, "ledge": false, "black_white": false, "pinned_by": "", "pos": [1200, -300, 64], "flow": 31,
+     "primary": "rifle_ak47", "secondary": "pistol", "throwable": "", "medkit": "first_aid_kit", "pills": "", "order": ""},
+    {"name": "Ellis", "player": "Ellis", "bot": true, "controlled": true, "alive": true, "hp": 40, "temp_hp": 12,
+     "incap": false, "ledge": false, "black_white": false, "pinned_by": "", "pos": [1100, -250, 64], "flow": 30,
+     "primary": "smg", "secondary": "pistol", "throwable": "molotov", "medkit": "", "pills": "", "order": ""},
+    {"name": "Coach", "player": "Coach", "bot": true, "controlled": true, "alive": true, "hp": 100, "temp_hp": 0,
+     "incap": false, "ledge": false, "black_white": false, "pinned_by": "", "pos": [-200, 400, 0], "flow": 22,
+     "primary": "pumpshotgun", "secondary": "pistol", "throwable": "", "medkit": "first_aid_kit", "pills": "", "order": ""},
+    {"name": "Rochelle", "player": "Rochelle", "bot": true, "controlled": false, "alive": false}
+  ],
+  "infected": [
+    {"id": "si_7", "type": "hunter", "pos": [1700, -900, 128], "dist": 780}
+  ],
+  "items": [
+    {"id": "medkit_212", "pos": [1400, -100, 64], "dist": 280},
+    {"id": "pills_305", "pos": [900, -500, 64], "dist": 320},
+    {"id": "weapon_411", "class": "rifle", "pos": [1500, -350, 64], "dist": 300}
+  ]
+}
